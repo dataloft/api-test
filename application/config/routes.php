@@ -40,7 +40,7 @@
 
 $route['404_override'] = '';
 
-$route['extrabroker/addorder'] = 'extrabroker/addorder';
+$route['resbox/addorder'] = 'resbox/addorder';
 
 
 

@@ -1,8 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Extrabroker extends Ci_Controller {
+class Resbox extends Ci_Controller {
 
-	protected $server = 'http://resbox.ru/api';
+	//protected $server = 'http://resbox.ru/api';
+	protected $server = 'http://resbox.mmp/api';
 	protected $api_key = '12345';
 
 	public function __construct() {
@@ -25,6 +26,7 @@ class Extrabroker extends Ci_Controller {
 			'surname' => 'Doe',
 			'birth' => '1981-06-11',
 			'phone' => '+799988877766',
+			'country' => 'Republic of South Africa',
 			'car_class' => 'ECAR',
 			'car_group' => 'M',
 			'car_type' => 'Hyundai Solaris',
@@ -37,9 +39,9 @@ class Extrabroker extends Ci_Controller {
 			'cust_flight_number' => 'PS543',
 			'equipment' => 'Navigation System (GPS) x 1',
 			'account_number' => '11111',
-			'rate_code' => '',
-			'airline' => '',
-			'comments' => ''
+			'rate_code' => 'USD',
+			'airline' => 'Emirates',
+			'comments' => 'Bla bla bla'
 			
 		);
 		
