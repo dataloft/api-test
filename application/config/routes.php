@@ -41,6 +41,7 @@
 $route['404_override'] = '';
 
 $route['resbox/addorder'] = 'resbox/addorder';
+$route['resbox/addxml'] = 'resbox/addxml';
 
 
 
