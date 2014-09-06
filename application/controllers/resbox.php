@@ -147,10 +147,12 @@ class Resbox extends Ci_Controller {
                     '.$reservation1.'
                     '.$reservation2.'
                   </reservations>
-        </MakeReservation>';
-            $url = 'http://resbox-z.dev.dataloft.ru/api/default/MakeReservation.xml';
+                  </MakeReservation>';
+            
+            $url = $this->server.'/default/MakeReservation.xml';
             echo $this->curl->simple_post($url, array('xml' => base64_encode($xml)), array(CURLOPT_USERAGENT => true));
         }
+        
         $this->load->view('xml_form', $data);
     }
 
