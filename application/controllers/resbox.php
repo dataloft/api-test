@@ -33,9 +33,9 @@ class Resbox extends Ci_Controller {
             'airline1'              => $this->input->post('airline1')?$this->input->post('airline1'):'',
             'rate_code1'            => $this->input->post('rate_code1')?$this->input->post('rate_code1'):'',
             'comments1'             => $this->input->post('comments1')?$this->input->post('comments1'):'',
-            'car_class1'            => $this->input->post('car_class1')?$this->input->post('car_class1'):'',
-            'car_group1'            => $this->input->post('car_group1')?$this->input->post('car_group1'):'',
-            'car_type1'            => $this->input->post('car_type1')?$this->input->post('car_type1'):'',
+            'vehicle_class1'            => $this->input->post('vehicle_class1')?$this->input->post('vehicle_class1'):'',
+            'vehicle_group1'            => $this->input->post('vehicle_group1')?$this->input->post('vehicle_group1'):'',
+            'vehicle_type1'            => $this->input->post('vehicle_type1')?$this->input->post('vehicle_type1'):'',
             'equipment1'            => $this->input->post('equipment1')?$this->input->post('equipment1'):'',
             'pick_up_country1'      => $this->input->post('pick_up_country1')?$this->input->post('pick_up_country1'):'',
             'pick_up_city1'         => $this->input->post('pick_up_city1')?$this->input->post('pick_up_city1'):'',
@@ -55,9 +55,9 @@ class Resbox extends Ci_Controller {
             'airline2'              => $this->input->post('airline2')?$this->input->post('airline2'):'',
             'rate_code2'            => $this->input->post('rate_code2')?$this->input->post('rate_code2'):'',
             'comments2'             => $this->input->post('comments2')?$this->input->post('comments2'):'',
-            'car_class2'            => $this->input->post('car_class2')?$this->input->post('car_class2'):'',
-            'car_group2'            => $this->input->post('car_group2')?$this->input->post('car_group2'):'',
-            'car_type2'            => $this->input->post('car_type2')?$this->input->post('car_type2'):'',
+            'vehicle_class2'            => $this->input->post('vehicle_class2')?$this->input->post('vehicle_class2'):'',
+            'vehicle_group2'            => $this->input->post('vehicle_group2')?$this->input->post('vehicle_group2'):'',
+            'vehicle_type2'            => $this->input->post('vehicle_type2')?$this->input->post('vehicle_type2'):'',
             'equipment2'            => $this->input->post('equipment2')?$this->input->post('equipment2'):'',
             'pick_up_country2'      => $this->input->post('pick_up_country2')?$this->input->post('pick_up_country2'):'',
             'pick_up_city2'         => $this->input->post('pick_up_city2')?$this->input->post('pick_up_city2'):'',
@@ -70,6 +70,7 @@ class Resbox extends Ci_Controller {
 
         if ($this->input->post('save'))
         {
+            print_r($data['xml']);
             $reservation1 = '';
             $reservation2 = '';
             if (!empty($data['xml']['reservation_number1']))
@@ -87,12 +88,12 @@ class Resbox extends Ci_Controller {
                 <rate_code>'.$data['xml']['rate_code1'].'</rate_code>
                 <comments>'.$data['xml']['comments1'].'</comments>
             </customer>
-            <car>
-                <car_class>'.$data['xml']['car_class1'].'</car_class>
-                <car_group>'.$data['xml']['car_group1'].'</car_group>
-                <car_type>'.$data['xml']['car_type1'].'</car_type>
+            <vehicle>
+                <vehicle_class>'.$data['xml']['vehicle_class1'].'</vehicle_class>
+                <vehicle_group>'.$data['xml']['vehicle_group1'].'</vehicle_group>
+                <vehicle_type>'.$data['xml']['vehicle_type1'].'</vehicle_type>
                 <equipment>'.$data['xml']['equipment1'].'</equipment>
-            </car>
+            </vehicle>
             <pickup>
                 <pick_up_country>'.$data['xml']['pick_up_country1'].'</pick_up_country>
                 <pick_up_city>'.$data['xml']['pick_up_city1'].'</pick_up_city>
@@ -121,12 +122,12 @@ class Resbox extends Ci_Controller {
                 <rate_code>'.$data['xml']['rate_code2'].'</rate_code>
                 <comments>'.$data['xml']['comments2'].'</comments>
             </customer>
-            <car>
-                <car_class>'.$data['xml']['car_class2'].'</car_class>
-                <car_group>'.$data['xml']['car_group2'].'</car_group>
-                <car_type>'.$data['xml']['car_type2'].'</car_type>
+            <vehicle>
+                <vehicle_class>'.$data['xml']['vehicle_class2'].'</vehicle_class>
+                <vehicle_group>'.$data['xml']['vehicle_group2'].'</vehicle_group>
+                <vehicle_type>'.$data['xml']['vehicle_type2'].'</vehicle_type>
                 <equipment>'.$data['xml']['equipment2'].'</equipment>
-            </car>
+            </vehicle>
             <pickup>
                 <pick_up_country>'.$data['xml']['pick_up_country2'].'</pick_up_country>
                 <pick_up_city>'.$data['xml']['pick_up_city2'].'</pick_up_city>
@@ -148,6 +149,7 @@ class Resbox extends Ci_Controller {
                     '.$reservation2.'
                   </reservations>
         </MakeReservation>';
+            echo base64_encode($xml);
             $url = 'http://resbox-z.dev.dataloft.ru/api/default/MakeReservation.xml';
             echo $this->curl->simple_post($url, array('xml' => base64_encode($xml)), array(CURLOPT_USERAGENT => true));
         }
@@ -164,9 +166,9 @@ class Resbox extends Ci_Controller {
 			'birth' => '1981-06-11',
 			'phone' => '+799988877766',
 			'country' => 'Republic of South Africa',
-			'car_class' => 'ECAR',
-			'car_group' => 'M',
-			'car_type' => 'Hyundai Solaris',
+			'vehicle_class' => 'ECAR',
+			'vehicle_group' => 'M',
+			'vehicle_type' => 'Hyundai Solaris',
 			'pick_up_country' => 'Russia',
 			'pick_up_city' => 'St. Petersburg',
 			'pick_up_location' => 'St. Petersburg Pulkovo Airport',
@@ -183,15 +185,11 @@ class Resbox extends Ci_Controller {
 		);
 		
 		$order['signature'] = sha1($this->api_key.$order['reservation_number']);
-		
-		//print_r($order);
-		//echo json_encode($order);
-		
+
 		$data = $this->rest->post('addorder', json_encode($order), 'json');
 		
 		print_r($data);
-		//echo $data;
-		
+
     }	
 
 }

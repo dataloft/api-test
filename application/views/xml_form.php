@@ -46,16 +46,16 @@
         <input type="text" class="form-control" id="comments1" name="comments1" value="<?=$xml['comments1']; ?>" placeholder="" >
     </div>
     <div class="form-group">
-        <label for="car_class1" class="control-label">car_class</label>
-        <input type="text" class="form-control" id="car_class1" name="car_class1" value="<?=$xml['car_class1']; ?>" placeholder="" >
+        <label for="vehicle_class1" class="control-label">vehicle_class</label>
+        <input type="text" class="form-control" id="vehicle_class1" name="vehicle_class1" value="<?=$xml['vehicle_class1']; ?>" placeholder="" >
     </div>
     <div class="form-group">
-        <label for="car_group1" class="control-label">car_group</label>
-        <input type="text" class="form-control" id="car_group1" name="car_group1" value="<?=$xml['car_group1']; ?>" placeholder="" >
+        <label for="vehicle_group1" class="control-label">vehicle_group</label>
+        <input type="text" class="form-control" id="vehicle_group1" name="vehicle_group1" value="<?=$xml['vehicle_group1']; ?>" placeholder="" >
     </div>
     <div class="form-group">
-        <label for="car_type1" class="control-label">car_type</label>
-        <input type="text" class="form-control" id="car_type1" name="car_type1" value="<?=$xml['car_type1']; ?>" placeholder="" >
+        <label for="vehicle_type1" class="control-label">vehicle_type</label>
+        <input type="text" class="form-control" id="vehicle_type1" name="vehicle_type1" value="<?=$xml['vehicle_type1']; ?>" placeholder="" >
     </div>
     <div class="form-group">
         <label for="equipment1" class="control-label">equipment</label>
@@ -127,16 +127,16 @@
         <input type="text" class="form-control" id="comments2" name="comments2" value="<?=$xml['comments2']; ?>" placeholder="" >
     </div>
     <div class="form-group">
-        <label for="car_class2" class="control-label">car_class</label>
-        <input type="text" class="form-control" id="car_class2" name="car_class2" value="<?=$xml['car_class2']; ?>" placeholder="" >
+        <label for="vehicle_class2" class="control-label">vehicle_class</label>
+        <input type="text" class="form-control" id="vehicle_class2" name="vehicle_class2" value="<?=$xml['vehicle_class2']; ?>" placeholder="" >
     </div> 
     <div class="form-group">
-        <label for="car_group2" class="control-label">car_group</label>
-        <input type="text" class="form-control" id="car_group2" name="car_group2" value="<?=$xml['car_group2']; ?>" placeholder="" >
+        <label for="vehicle_group2" class="control-label">vehicle_group</label>
+        <input type="text" class="form-control" id="vehicle_group2" name="vehicle_group2" value="<?=$xml['vehicle_group2']; ?>" placeholder="" >
     </div>
     <div class="form-group">
-        <label for="car_type2" class="control-label">car_type</label>
-        <input type="text" class="form-control" id="car_type2" name="car_type2" value="<?=$xml['car_type2']; ?>" placeholder="" >
+        <label for="vehicle_type2" class="control-label">vehicle_type</label>
+        <input type="text" class="form-control" id="vehicle_type2" name="vehicle_type2" value="<?=$xml['vehicle_type2']; ?>" placeholder="" >
     </div>
     <div class="form-group">
         <label for="equipment2" class="control-label">equipment</label>
